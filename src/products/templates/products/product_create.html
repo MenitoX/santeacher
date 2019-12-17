@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<form method='POST'> {% csrf_token %}
+{{ form.as_p }}  <!--Reemplaza el poner inputs para el resto de los valores-->      
+<!--EJ : <input type='text' name='title' placeholder='Your Title' />-->
+<input type='submit' value='Save' />
+        </form>
+
+{% endblock %}
