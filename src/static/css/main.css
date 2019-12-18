@@ -1,5 +1,5 @@
 body {
-    background: #28597a;
+    background: #b4c2e7;
   }
   
   @media screen
@@ -375,3 +375,8 @@ body {
     text-decoration: none;
   }
  
+
+/* EXTRA */
+h1{
+  color: white
+}
