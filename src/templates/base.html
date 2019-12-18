@@ -5,14 +5,23 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" type='text/css' href="{% static 'web/navbar.css' %}">
-   <title>SanTeacher, tu plataforma de aprendizaje preferida</title>
+    <link rel="stylesheet" type='text/css' href="{% static 'css/main.css' %}">
+    <title>SanTeacher, tu plataforma de aprendizaje preferida</title>
 </head>
 <body>
-{% include 'navbar.html' %} <!--incluye la navbar-->
+    <nav>
+        <ul>
+            <li> <a title="Volver a inicio" href="/">Inicio </a></li>
+            <li> <a title="Iniciar sesión" href="/login">Iniciar Sesión   </a></li>
+            <li> <a title="Regístrate" href="/register">Registrarse   </a></li>
+            <li> <a title="Calendario " href="/calendario">Calendario    </a></li>
+            <!--<li> <a title="Abaut" href="/abaut">abaut     </a></li>
+            <li> <a title="popup" href="/main">main     </a></li>-->
+        </ul>
+    </nav>
 {% if messages %}   
     {% for message in messages %}
         <div class='alert alert-{{ message.tags }}'>

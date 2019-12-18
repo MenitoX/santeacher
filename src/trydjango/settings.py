@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+    #"/Users/Pablo/Desktop/Dev1/src/static",
+]
+
+
 
 # Application definition
 
