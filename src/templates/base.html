@@ -15,8 +15,14 @@
     <nav>
         <ul>
             <li> <a title="Volver a inicio" href="/">Inicio </a></li>
-            <li> <a title="Iniciar sesión" href="/login">Iniciar Sesión   </a></li>
-            <li> <a title="Regístrate" href="/register">Registrarse   </a></li>
+            {% if user.is_authenticated %}
+            <li> <a title="Perfil" href="{% url 'profile' %}">Perfil   </a></li>
+            <li> <a title="Cerrar sesión" href="{% url 'logout' %}">Cerrar sesión   </a></li>
+            <li> <a title="Crear Post" href="/post/new/">Crear Post </a></li>
+            {% else %}
+            <li> <a title="Iniciar sesión" href="{% url 'login' %}">Iniciar Sesión   </a></li>
+            <li> <a title="Regístrate" href="{% url 'register' %}">Registrarse   </a></li>
+            {% endif %}
             <li> <a title="Calendario " href="/calendario">Calendario    </a></li>
             <!--<li> <a title="Abaut" href="/abaut">abaut     </a></li>
             <li> <a title="popup" href="/main">main     </a></li>-->
