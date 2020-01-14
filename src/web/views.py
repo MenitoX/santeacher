@@ -1,6 +1,7 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from .models import Post
+from django.contrib.auth.models import User
 from django.views.generic import (
     ListView, 
     DetailView, 
@@ -23,6 +24,16 @@ class PostListView(ListView):
     template_name = 'home.html'
     context_object_name = 'posts'
     ordering = ['-date_posted']
+    paginate_by= 3
+
+class UserPostListView(ListView):
+    model = Post
+    template_name = 'home/user_post.html'
+    context_object_name = 'posts'
+    ordering = ['-date_posted']
+    paginate_by= 3
+     #def get.query_set (self):
+      #      User =get
 
 class PostDetailView(DetailView):
     model = Post
